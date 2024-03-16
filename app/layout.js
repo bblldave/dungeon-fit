@@ -25,7 +25,7 @@ const topNavItems = ['1', '2', '3'].map((key) => ({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-800">
+      <body className="bg-gray-800 text-base">
         <AntdRegistry>
           <ConfigProvider
             theme={{
