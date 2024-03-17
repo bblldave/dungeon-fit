@@ -1,10 +1,11 @@
 import React from "react";
+import { Flex } from "antd";
 
 const ContentContainer = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center p-12">
+    <Flex vertical   justify="center" gap="middle" className="min-h-screen p-12">
       <div className="">{children}</div>
-    </div>
+    </Flex>
   );
 };
 
