@@ -4,6 +4,13 @@ import { useRouter } from "next/navigation";
 import localForage from "localforage";
 import { Button, Spin } from "antd";
 import ContentContainer from "./components/shared/ContentContainer";
+import Exercise from "./components/Exercise/Exercise";
+import exercises from "./data/exercises";
+import Onboarding from "./components/Onboarding/Onboarding";
+import { Flex } from "antd";
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,9 +38,14 @@ export default function Home() {
         {isLoading ? (
           <Spin size="large" />
         ) : (
-
-          <p>Fitness test completed. Still need to add a home page</p>
-
+          <div>
+            <Title>Choose your exercises!</Title>
+            <Flex justify="center" wrap="wrap" style={{ height: "100%", gap: "20px" }}>
+              {exercises.map((exercise) => (
+                <Exercise className="mx-4" key={exercise.id} exercise={exercise} />
+              ))}
+            </Flex>
+          </div>
         )}
       </ContentContainer>
     </main>
