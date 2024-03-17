@@ -10,7 +10,7 @@ const Onboarding = () => {
   const router = useRouter();
 
   const startFitnessTest = () => {
-    router.push("/fitness-test");
+    router.push("/onboarding/fitness-test");
   };
 
   return (
