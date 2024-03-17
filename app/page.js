@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Onboarding from "./components/Onboarding/Onboarding";
 import localForage from "localforage";
 import { Button } from "antd";
-import ContentContainer from "./components/shared/contentContainer";
+import ContentContainer from "./components/shared/ContentContainer";
 
 export default function Home() {
   const [hasCompletedFitTest, setHasCompletedFitTest] = useState(false);
