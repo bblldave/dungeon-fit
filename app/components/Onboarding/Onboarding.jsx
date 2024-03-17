@@ -17,6 +17,7 @@ const Onboarding = () => {
         <Image
           src="/OnboardingHeaderImage.jpg"
           alt="Dungeon Adventure"
+          className="rounded-lg"
           width={1000}
           height={500}
         />
