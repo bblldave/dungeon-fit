@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "antd";
+import Image from "next/image";
 
 const Onboarding = () => {
   const router = useRouter();
@@ -11,12 +12,14 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="flex flex-col  min-h-screen text-white">
+    <div className="flex flex-col items-center justify-center min-h-screen text-white">
       <div className="w-full">
-        <img
-          src="./OnboardingHeaderImage.jpg"
+        <Image
+          src="/OnboardingHeaderImage.jpg"
           alt="Dungeon Adventure"
-          style={{ width: "100%", height: "auto" }}
+          layout="responsive"
+          width={1000}
+          height={500}
         />
       </div>
 
