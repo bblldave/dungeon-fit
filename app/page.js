@@ -1,9 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
-import Onboarding from "./components/Onboarding/Onboarding";
 import localForage from "localforage";
-import { Button } from "antd";
 import ContentContainer from "./components/shared/ContentContainer";
+import Exercise from "./components/Exercise/Exercise";
+import exercises from "./data/exercises";
+import Onboarding from "./components/Onboarding/Onboarding";
+import { Flex } from "antd";
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 export default function Home() {
   const [hasCompletedFitTest, setHasCompletedFitTest] = useState(false);
@@ -31,7 +36,12 @@ export default function Home() {
   return (
     <main>
       <ContentContainer>
-        <p>Fitness test completed. Still need to add a home page</p>
+        <Title>Choose your exercises!</Title>
+        <Flex justify="center" wrap="wrap" style={{ height: "100%", gap: "20px" }}>
+          {exercises.map((exercise) => (
+            <Exercise className="mx-4" key={exercise.id} exercise={exercise} />
+          ))}
+        </Flex>
       </ContentContainer>
     </main>
   );
