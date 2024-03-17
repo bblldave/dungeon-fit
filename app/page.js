@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Onboarding from "./components/Onboarding/Onboarding";
 import localForage from "localforage";
 import { Button } from "antd";
+import ContentContainer from "./components/shared/contentContainer";
 
 export default function Home() {
   const [hasCompletedFitTest, setHasCompletedFitTest] = useState(false);
@@ -12,7 +13,6 @@ export default function Home() {
   useEffect(() => {
     localForage.getItem("hasCompletedFitTest").then((value) => {
       if (value) {
-        debugger;
         setHasCompletedFitTest(true);
       }
     });
@@ -20,15 +20,19 @@ export default function Home() {
 
   if (!hasCompletedFitTest) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center p-10">
-        <Onboarding />
+      <main>
+        <ContentContainer>
+          <Onboarding />
+        </ContentContainer>
       </main>
     );
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Button type="primary">Primary Button</Button>
+    <main>
+      <ContentContainer>
+        <p>Fitness test completed. Still need to add a home page</p>
+      </ContentContainer>
     </main>
   );
 }
