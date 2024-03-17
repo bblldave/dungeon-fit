@@ -1,5 +1,5 @@
 import React from "react";
-import ContentContainer from "../components/shared/contentContainer";
+import ContentContainer from "../components/shared/ContentContainer";
 
 export default function Overview() {
   return (
