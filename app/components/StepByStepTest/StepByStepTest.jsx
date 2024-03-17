@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Steps, Button, Space, Card } from "antd";
 import localForage from "localforage";
@@ -9,6 +10,8 @@ const { Step } = Steps;
 const StepByStepTest = ({ testSteps, dataStorageKey }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [testResults, setTestResults] = useState({});
+
+  const router = useRouter();
 
   const next = () => {
     setCurrentStep(currentStep + 1);
@@ -31,7 +34,7 @@ const StepByStepTest = ({ testSteps, dataStorageKey }) => {
       .setItem("hasCompletedFitTest", true)
       .then((value) => {
         // Calculate ability scores based on test results
-        // Navigate to the next page
+        router.push("/onboarding/class-selection");
       })
       .catch((err) => {
         console.error(err);
