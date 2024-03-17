@@ -38,12 +38,14 @@ export default function Home() {
         {isLoading ? (
           <Spin size="large" />
         ) : (
-          <Title>Choose your exercises!</Title>
-          <Flex justify="center" wrap="wrap" style={{ height: "100%", gap: "20px" }}>
-            {exercises.map((exercise) => (
-              <Exercise className="mx-4" key={exercise.id} exercise={exercise} />
-            ))}
-          </Flex>
+          <div>
+            <Title>Choose your exercises!</Title>
+            <Flex justify="center" wrap="wrap" style={{ height: "100%", gap: "20px" }}>
+              {exercises.map((exercise) => (
+                <Exercise className="mx-4" key={exercise.id} exercise={exercise} />
+              ))}
+            </Flex>
+          </div>
         )}
       </ContentContainer>
     </main>
