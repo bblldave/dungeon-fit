@@ -17,7 +17,6 @@ const Onboarding = () => {
         <Image
           src="/OnboardingHeaderImage.jpg"
           alt="Dungeon Adventure"
-          layout="responsive"
           width={1000}
           height={500}
         />

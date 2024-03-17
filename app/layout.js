@@ -1,30 +1,39 @@
 "use client";
 import React from "react";
 import "./globals.css";
-import { Layout, Menu, ConfigProvider, theme } from "antd";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import {
+  HomeOutlined,
   UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
+  RadarChartOutlined,
 } from "@ant-design/icons";
+import { Layout, Menu, ConfigProvider, theme } from "antd";
+import Link from "next/link";
 
 const { Content, Footer, Sider } = Layout;
 
 const sideNavItems = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  UserOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
-}));
+  {
+    key: "1",
+    icon: <HomeOutlined />,
+    label: <Link href="/">Home</Link>,
+  },
+  {
+    key: "2",
+    icon: <UserOutlined />,
+    label: <Link href="/overview">Overview</Link>,
+  },
+  {
+    key: "3",
+    icon: <RadarChartOutlined />,
+    label: <Link href="/fitness-test">Fitness Test</Link>,
+  },
+];
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <title>Dungeon Fit</title>
       <body className="bg-gray-800 text-base">
         <AntdRegistry>
           <ConfigProvider
@@ -47,7 +56,7 @@ export default function RootLayout({ children }) {
                 <Menu
                   theme="dark"
                   mode="inline"
-                  defaultSelectedKeys={["4"]}
+                  defaultSelectedKeys={["1"]}
                   items={sideNavItems}
                 />
               </Sider>
