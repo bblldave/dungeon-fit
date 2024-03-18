@@ -1,5 +1,5 @@
 const exercises = [
-    // id, name, description, xpOnCompletion, completeOptions,
+    // id, name, description, xpOnCompletion, completeOptions
     {
         id: "pushups",
         name: "Push-ups",
@@ -15,7 +15,6 @@ const exercises = [
         difficulty: "Intermediate",
         reps: 15,
         xpOnCompletion: 75,
-
     },
     {
         id: "plank",
