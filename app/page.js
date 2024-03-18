@@ -5,7 +5,7 @@ import localForage from "localforage";
 import { Carousel, Divider, Spin } from "antd";
 import ContentContainer from "./components/shared/ContentContainer";
 import workouts from "./data/workouts";
-import { Typography } from "antd";
+import { Typography, Progress, Flex } from "antd";
 import Workout from "./components/Workout/Workout";
 import { barbarianWorkoutProgram, rangerWorkoutProgram, monkWorkoutProgram, rogueWorkoutProgram, mageWorkoutProgram } from "./data/workoutPrograms";
 
@@ -52,6 +52,9 @@ export default function Home() {
     return null;
   }
 
+  const totalWorkouts = workoutProgram.weeks.flatMap((week) => week.days.flatMap((day) => day.workouts)).length;
+  const completedWorkouts = 6;
+
   return (
     <main>
       <ContentContainer>
@@ -60,6 +63,11 @@ export default function Home() {
         ) : (
           <div>
             <Title>{workoutProgram.name}</Title>
+            <Flex justify="space-between" wrap="wrap">
+              <span>Program Progress</span>
+              <span>{completedWorkouts} / {totalWorkouts} </span>
+            </Flex>
+            <Progress percent={(completedWorkouts / totalWorkouts) * 100} />
             <Carousel dotPosition="bottom" className="py-10">
               {workoutProgram.weeks.map((week, weekIndex) => (
                 <div key={weekIndex}>
