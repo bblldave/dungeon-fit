@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Card, Button, Carousel, Space, Typography, Flex, List } from "antd";
 import { classesData } from "../../data/classes";
@@ -10,6 +10,7 @@ import localForage from "localforage";
 const { Title, Paragraph, Text } = Typography;
 
 const ClassSelectionScreen = () => {
+  const [abilityScores, setAbilityScores] = useState({});
   const router = useRouter();
 
   const onClassSelection = (className) => {
@@ -23,6 +24,14 @@ const ClassSelectionScreen = () => {
       });
   };
 
+  useEffect(() => {
+    localForage.getItem("abilityScores").then((scores) => {
+      if (scores) {
+        setAbilityScores(scores);
+      }
+    });
+  }, []);
+
   return (
     <ContentContainer>
       <Space direction="vertical" size="large" className="w-full">
@@ -30,10 +39,16 @@ const ClassSelectionScreen = () => {
           Your Ability Scores
         </Title>
         <Flex wrap="wrap" justify="center" className="mb-8">
-          <AbilityScore type="Strength" value={15} />
-          <AbilityScore type="Dexterity" value={15} />
-          <AbilityScore type="Constitution" value={15} />
-          <AbilityScore type="Intelligence" value={15} />
+          <AbilityScore type="Strength" value={abilityScores.strength} />
+          <AbilityScore type="Dexterity" value={abilityScores.dexterity} />
+          <AbilityScore
+            type="Constitution"
+            value={abilityScores.constitution}
+          />
+          <AbilityScore
+            type="Intelligence"
+            value={abilityScores.intelligence}
+          />
         </Flex>
 
         <Paragraph className="text-center">
