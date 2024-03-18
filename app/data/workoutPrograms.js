@@ -90,7 +90,7 @@ export const rogueWorkoutProgram = {
   })),
 };
 
-const mageWorkoutProgram = {
+export const mageWorkoutProgram = {
   name: "Mage Mental and Physical Training Program",
   duration: "8 weeks",
   weeks: Array.from({ length: 8 }, (_, i) => ({

@@ -161,6 +161,12 @@ export const workouts = [
     description: "A range of stretching exercises to enhance flexibility and reduce the risk of injuries.",
     exercises: ["flexibility-training"],
   },
+  {
+    id: "aerobic-conditioning",
+    name: "Aerobic Conditioning",
+    description: "Exercises to improve cardiovascular fitness and endurance.",
+    exercises: ["aerobic-conditioning"],
+  }
 
 ];
 
