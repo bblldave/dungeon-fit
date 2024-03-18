@@ -33,5 +33,6 @@ export const classesData = [
     exampleExercises: ['Meditation', 'Memory Games', 'Balance Training'],
     mainFocus: 'Intelligence',
     secondaryFocus: 'Dexterity'
-  }
+  },
+  
 ];
