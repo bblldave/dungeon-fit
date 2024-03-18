@@ -25,10 +25,8 @@ const Onboarding = () => {
         />
       </div>
 
-      <Space direction="vertical" size="middle">
-        <Title level={1} style={{ textAlign: "center" }}>
-          Embark on Your Fitness Quest
-        </Title>
+      <Space direction="vertical" size="middle" className="w-full text-center">
+        <Title level={1}>Embark on Your Fitness Quest</Title>
         <Paragraph>
           Welcome to DungeonFit, where your fitness journey transcends the
           ordinary, transforming it into an epic adventure. Brace yourself for a
