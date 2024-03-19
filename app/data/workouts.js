@@ -123,7 +123,7 @@ export const workouts = [
     id: "yoga-meditation",
     name: "Yoga & Meditation",
     description: "A combination of yoga poses and meditation to enhance mental clarity and physical balance.",
-    exercises: ["yoga-meditation"],
+    exercises: ["advanced-yoga-poses"],
   },
   {
     id: "tai-chi",

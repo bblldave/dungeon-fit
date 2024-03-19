@@ -65,9 +65,9 @@ export default function Home() {
             <Title>{workoutProgram.name}</Title>
             <Flex justify="space-between" wrap="wrap">
               <span>Program Progress</span>
-              <span>{completedWorkouts} / {totalWorkouts} </span>
+              <span>{completedWorkouts} / {totalWorkouts}</span>
             </Flex>
-            <Progress percent={(completedWorkouts / totalWorkouts) * 100} />
+            <Progress percent={Math.round((completedWorkouts / totalWorkouts) * 100)} />
             <Carousel dotPosition="bottom" className="py-10">
               {workoutProgram.weeks.map((week, weekIndex) => (
                 <div key={weekIndex}>

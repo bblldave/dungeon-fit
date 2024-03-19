@@ -17,7 +17,7 @@ const ClassSelectionScreen = () => {
     localForage
       .setItem("userClass", className)
       .then((value) => {
-        router.push("/overview");
+        router.push("/");
       })
       .catch((err) => {
         console.error(err);
@@ -60,7 +60,7 @@ const ClassSelectionScreen = () => {
           attributes that you wish to improve upon. Choose Wisely!
         </Paragraph>
 
-        <Carousel dotPosition="bottom" className="py-10">
+        <Carousel autoplay dotPosition="bottom" className="py-10">
           {classesData.map((cls) => (
             <Card key={cls.name} title={cls.name} className="text-center">
               <Space direction="vertical" size="middle">
