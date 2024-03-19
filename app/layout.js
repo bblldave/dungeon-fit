@@ -4,7 +4,7 @@ import "./globals.css";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import {
   HomeOutlined,
-  UserOutlined,
+  UserSwitchOutlined,
   RadarChartOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu, ConfigProvider, theme } from "antd";
@@ -20,13 +20,13 @@ const sideNavItems = [
   },
   {
     key: "2",
-    icon: <UserOutlined />,
-    label: <Link href="/overview">Overview</Link>,
+    icon: <RadarChartOutlined />,
+    label: <Link href="/onboarding/fitness-test">Fitness Test</Link>,
   },
   {
     key: "3",
-    icon: <RadarChartOutlined />,
-    label: <Link href="/fitness-test">Fitness Test</Link>,
+    icon: <UserSwitchOutlined />,
+    label: <Link href="/onboarding/class-selection">Change Class</Link>,
   },
 ];
 
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
               </Sider>
               <Layout>
                 <Content>{children}</Content>
-                <Footer>Footer</Footer>
+                <Footer>Dungeon Fitness / {new Date().getFullYear()} / <Link href="https://github.com/bblldave/dungeon-fit">GitHub</Link></Footer>
               </Layout>
             </Layout>
           </ConfigProvider>
