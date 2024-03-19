@@ -4,11 +4,13 @@ import { React, useContext, useState } from "react";
 import { Space, Flex, Progress, Button } from "antd";
 import localForage from "localforage";
 
-
+/*
+FOR USE LATER
 localForage.getItem("XPValue")
   .then((value) => {
     console.log(value);
   });
+*/
 
 const XPProgressBar = () => {
   const { xpValue, setXPValue,
